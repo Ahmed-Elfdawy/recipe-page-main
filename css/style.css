@@ -1,0 +1,188 @@
+:root {
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+}
+
+@font-face {
+  font-family: 'Young Serif';
+  src: url('../assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    background-color: var(--stone-100);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: white;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 45rem;
+    margin: 5rem auto 0;
+    border-radius: 1rem;
+  }
+}
+
+.card .image-box {
+  width: 100%;
+}
+
+.card img {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card .image-box {
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    width: calc(100% - 4rem);
+    overflow: hidden;
+  }
+}
+
+.card .content {
+  padding: 0 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.content h1 {
+  font-family: 'Young Serif';
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    max-width: 15rem;
+  }
+}
+
+.content p {
+  font-family: Outfit;
+  font-size: 1rem;
+  max-width: 19.5rem;
+}
+
+@media (min-width: 768px) {
+  .content p {
+    max-width: 100%;
+  }
+}
+
+.content .prep-time {
+  font-family: Outfit;
+  background-color: var(--rose-50);
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.content .prep-time h2 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--rose-800);
+  margin-bottom: 0.5rem;
+}
+
+.content .prep-time span {
+  font-weight: bold;
+}
+
+.prep-time ul li:not(:last-child) {
+  margin-bottom: 0.7rem;
+}
+
+.content .ingredients,
+.content .instructions {
+  max-width: 19.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
+
+@media (min-width: 768px) {
+  .content .ingredients,
+  .content .instructions {
+    max-width: 100%;
+  }
+}
+
+.content .ingredients h2,
+.content .instructions h2,
+.content .nutrition h2 {
+  font-family: 'Young Serif';
+  font-weight: 400;
+  color: var(--brown-800);
+  margin-bottom: 1rem;
+}
+
+.content .ingredients ul,
+.content .instructions ol {
+  font-family: Outfit;
+}
+.content .ingredients ul li:not(:last-child),
+.content .instructions ol li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.instructions ol li span {
+  font-weight: bold;
+}
+
+.nutrition p {
+  margin-bottom: 1rem;
+}
+.nut-row {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  padding-bottom: 0.5rem;
+  font-family: Outfit;
+  margin-bottom: 0.5rem;
+}
+.nut-row:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.nut-row > div {
+  flex: 1;
+}
+
+.nut-row > div:last-child {
+  color: var(--brown-800);
+  font-weight: bold;
+}
